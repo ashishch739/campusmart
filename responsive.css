@@ -1,0 +1,107 @@
+/* ==========================================
+   CampusMart - Responsive Media Queries & Mobile Drawer
+   (assets/css/responsive.css)
+   ========================================== */
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.75rem;
+    }
+    
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+
+    .mobile-toggle-btn {
+        display: flex;
+    }
+
+    /* Mobile Navigation Drawer */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #ffffff;
+        padding: 1.25rem;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 16px 16px;
+        gap: 0.5rem;
+        z-index: 1000;
+    }
+
+    .nav-links.mobile-open {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-actions {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: calc(100% + 220px);
+        left: 0;
+        background: #ffffff;
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-actions.mobile-open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-dashboard {
+        padding: 3.5rem 0 4.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.15rem;
+    }
+
+    .hero-sub {
+        font-size: 1.05rem;
+    }
+
+    .section-cards-row {
+        margin-top: 1rem;
+    }
+
+    .form-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.85rem;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
